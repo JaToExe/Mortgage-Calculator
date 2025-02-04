@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <p class="error amountError">This field is required</p>
+    <p class="error amountTerm">This field is required</p>
+    <p class="error amountRate">This field is required</p>
+    <p class="error amountType">This field is required</p>
+    <main>
+        <section class="content">
+            <div class="top">
+                <h1 class="tittle">Mortgage Calculator</h1>
+
+                <a href="" class="clear">Clear All</a>
+            </div>
+
+
+            <label class="label" for="amount">Mortgage Amount</label>
+            <div class="option inputColorIdk">
+                <input id="amount" type="number">
+                <label class="labelInside" for="amount">£</label>
+            </div>
+
+            <div class="center">
+                <div>
+                    <label class="label" for="term">Mortgage Term</label>
+                    <div class="option">
+                        <input id="term" type="number">
+                        <label class="labelInside" for="term">years</label>
+                    </div>
+                </div>
+                
+                <div>                   
+                    <label class="label" for="rate">Interest Rate</label>
+                    <div class="option optionRate">
+                        <input id="rate" type="number">
+                        <label class="labelInside" for="rate">%</label>
+                    </div>
+                </div>
+            </div>
+
+            <label class="label" for="rate">Mortgage Type</label>
+                <div class="radio">
+                    <input type="radio" name="mortgageType" id="repayment">
+                    <label class="labelInside radioLabel" for="repayment">Repayment</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="mortgageType" id="intrest">
+                    <label class="labelInside radioLabel" for="intrest">Interest Only</label>
+                </div>
+            <div class="button">
+                <img src="./assets/images/icon-calculator.svg" alt="buttonImg">
+                <p>Calculate Repayments</p>
+            </div>
+        </section>
+
+        
+        <section class="result">
+            <div class="foto">
+                <img src="./assets/images/illustration-empty.svg" alt="calculatorFoto">
+            </div>
+
+            <h2 class="tittle2">Results shown here</h2>
+
+            <div class="centerText">
+                <p class="bottomText">Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+            </div>
+        
+            <h2 class="tittle3">Your results</h2>
+
+            <p class="bottomText2">Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+        
+            <section class="finalResult">
+                <div class="box">
+                    <p class="finalResultText">Your monthly repayments</p>
+
+                    <h3 class="mounthlyPayment">£1,797.74</h3>
+
+                    <div class="line"></div>
+
+                    <p class="finalResultText2">Total you'll repay over the term</p>
+
+                    <h3 class="payment">£539,322.94</h3>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
