@@ -3,13 +3,14 @@
 const button = document.querySelector('.button');
 
 button.addEventListener('click', () => {
-
-    setValue();
+    
+    const radioStatus = true;
+    setValue(radioStatus);
     
 });
 
 
-function setValue() {
+function setValue(radioStatus) {
 
     const amount = document.querySelector('#amount').value;
     const term = document.querySelector('#term').value;
@@ -23,11 +24,11 @@ function setValue() {
     console.log(repayment);
     console.log(intrest);
     
-    validateForm(amount, term, rate, repayment, intrest);
+    validateForm(amount, term, rate, repayment, intrest, radioStatus);
 
 };
 
-function validateForm(amount, term, rate, repayment, intrest) {
+function validateForm(amount, term, rate, repayment, intrest, radioStatus) {
 
     if (!amount || isNaN(Number(amount))) {
 
@@ -73,8 +74,6 @@ function validateForm(amount, term, rate, repayment, intrest) {
         rateLabel.style.border = 'solid 1px hsl(4, 69%, 50%)'; 
     
     }
-    
-    const radioStatus = true;
 
     if (!repayment && !intrest) {
 
@@ -92,7 +91,13 @@ function validateForm(amount, term, rate, repayment, intrest) {
 
         clear()
         
-        calculate(amount, term, rate, repayment, intrest);
+        if (repayment) {
+            calculate(amount, term, rate, repayment intrest);
+        }
+        
+        if (intrest) {
+            alert('In working progress');
+        }
 
     }
 
