@@ -1,6 +1,7 @@
 "use strict";
 
 const button = document.querySelector('.button');
+const radioStatus = false;
 
 button.addEventListener('click', () => {
     
@@ -92,11 +93,11 @@ function validateForm(amount, term, rate, repayment, intrest, radioStatus) {
         clear()
         
         if (repayment) {
-            calculate(amount, term, rate, repayment intrest);
+            calculate(amount, term, rate, repayment, intrest);
         }
         
         if (intrest) {
-            alert('In working progress');
+            calculateIntrest(amount, term, rate, repayment, intrest);
         }
 
     }
@@ -113,6 +114,20 @@ function calculate(amount, term, rate, repayment, intrest) {
     schowData (monthlyPayment, total);
 
 };
+
+function calculateIntrest(amount, term, rate, repayment, intrest) {
+    
+    const monthlyRate = rate / 100 / 12;
+    const numberOfPayments = term * 12;
+    const monthlyPayment = amount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -numberOfPayments));
+    const totalCost = monthlyPayment * 12 * term;
+    const total = totalCost - amount;
+
+
+    schowData (monthlyPayment, total);
+
+};
+
 
 function schowData(monthlyPayment, total) {
 
